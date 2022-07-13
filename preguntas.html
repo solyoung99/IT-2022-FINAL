@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+	
+	<title>Preguntas</title>
+
+	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
+	
+	<link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+	<!-- Custom styles for our template -->
+	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen" >
+	<link rel="stylesheet" href="assets/css/main.css">
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="assets/js/html5shiv.js"></script>
+	<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body class="home">
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
+		<div class="container">
+			<div class="navbar-header">
+				<!-- Button for smallest screens -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+				<a class="navbar-brand" href="index.html"><img src="assets/images/logoPdb.png" alt="Progressus HTML5 template"></a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav pull-right">
+					<li class="active"><a href="index.html">Inicio</a></li>
+					<li><a href="about.html">Sobre Mi</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Proyecto <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="objetivo.html">Objetivo</a></li>
+							<li class="active"><a href="desarrollo.html">Desarrollo</a></li>
+							<li class="active"><a href="graficos.html">Graficos</a></li>
+							<li class="active"><a href="video.html">Video</a></li>
+							<li class="active"><a href="preguntas.html">Preguntas Frecuentes</a></li>
+						</ul>
+					</li>
+					
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</div> 
+	<!-- /.navbar -->
+
+	<header id="head" class="secondary"></header>
+
+	<!-- container -->
+	<div class="container">
+
+		<ol class="breadcrumb">
+			<li><a href="index.html">Inicio</a></li>
+			<li class="active">Preguntas Frecuentes</li>
+		</ol>
+
+		<div class="row">
+			
+			<!-- Article main content -->
+			<article class="col-sm-8 maincontent">
+				<header class="page-header">
+					<h1 class="page-title">Preguntas Frecuentes</h1>
+				</header>
+                <div class="span5 fblanco">
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                              <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseTwo">
+                                  La red WIFI no aparece en mi dispositivo
+                                </button>
+                              </h5>
+                            </div>
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                              <div class="card-body">
+                                Verifica que en el código  hayas puesto el ssid y contraseña de conexión local
+                              </div>
+                            </div>
+                          </div>
+                        <div class="card">
+                          <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0">
+                              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                ¿Qué quiere decir millis?
+                              </button>
+                            </h5>
+                          </div>
+                          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body">
+                              La función millis() devuelve el número de milisegundos desde que la placa Arduino empezó a ejecutar, luego de un reinicio o el encendido.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-header" id="headingThree">
+                            <h5 class="mb-0">
+                              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                ¿Qué quiere decir la funcion attachInterrupt()?
+                              </button>
+                            </h5>
+                          </div>
+                          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                            <div class="card-body">
+                                Esta función nos va a permitir definir o configurar uno de los pines como un puerto de interrupción. Los tres parámetros que admite son:pin,ISR y modo.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingFour">
+                              <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseTwo">
+                                  ¿Qué quiere decir digitalPinToInterrupt()?
+                                </button>
+                              </h5>
+                            </div>
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                              <div class="card-body">
+                                Si attachInterrupt() nos permite configurar un pin como interrupción, el método detachInterrupt() anula esa configuración. Como parámetro le pasamos el pin y lo podemos hacer con la función digitalPinToInterrupt(número de pin) que nos devolverá el ordinal del pin del que queremos anular la configuración.
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card">
+                            <div class="card-header" id="headingFive">
+                              <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseTwo">
+                                  ¿Qué quiere decir ICACHE_RAM_ATTR ?
+                                </button>
+                              </h5>
+                            </div>
+                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                              <div class="card-body">
+                                ICACHE_RAM_ATTR es un atributo de enlace.
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card">
+                            <div class="card-header" id="headingSix">
+                              <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseTwo">
+                                  Cuando compilo el código y abro el monitor de serie no me aparece nada
+                                </button>
+                              </h5>
+                            </div>
+                            <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+                              <div class="card-body">
+                                Proba en cambiar el puerto a 115200.Es depende la placa,algunos funcionan con 9600 otros con 115200.
+                              </div>
+                            </div>
+                          </div>
+						  <div class="card">
+                            <div class="card-header" id="headingSeven">
+                              <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseTwo">
+                                  Se conecta a la red WIFI pero no me aparece el estado de la puerta
+                                </button>
+                              </h5>
+                            </div>
+                            <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordion">
+                              <div class="card-body">
+                                Verifica la disposicion de los pines si esta bien colocada en tu placa.No todas las placas tienen la misma distribucion.
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                </div>	
+			</article>
+			<!-- /Article -->
+			
+			<!-- Sidebar -->
+			<aside class="col-sm-4 sidebar sidebar-right">
+
+				<div class="widget">
+					<img src="assets/images/FAQ.png"
+				</div>
+
+			</aside>
+			<!-- /Sidebar -->
+
+		</div>
+	</div>	<!-- /container -->
+	
+
+	<footer id="footer" class="top-space">
+
+		<div class="footer1">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">Contacto</h3>
+						<div class="widget-body">
+								<a href="mailto:#">myoung@pioix.edu.ar</a><br>
+								<br>
+								Casa Salesiana Pio IX - Yapeyu 197, CABA
+							</p>	
+						</div>
+					</div>
+
+
+				</div> <!-- /row of widgets -->
+			</div>
+		</div>
+
+		<div class="footer2">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-6 widget">
+						<div class="widget-body">
+							<p class="simplenav">
+								<a href="#">Inicio</a> | 
+								<a href="about.html">Sobre mi</a> |
+								<a href="sidebar-right.html">Proyecto</a> |
+							
+							</p>
+						</div>
+					</div>
+
+					<div class="col-md-6 widget">
+						<div class="widget-body">
+							<p class="text-right">
+								Copyright &copy; 2022, Maria Sol Young
+							</p>
+						</div>
+					</div>
+
+				</div> <!-- /row of widgets -->
+			</div>
+		</div>
+	</footer>	
+		
+
+
+
+
+	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="assets/js/headroom.min.js"></script>
+	<script src="assets/js/jQuery.headroom.min.js"></script>
+	<script src="assets/js/template.js"></script>
+</body>
+</html>

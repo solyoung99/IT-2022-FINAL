@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+	<title>Desarrollo</title>
+
+	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
+	
+	<link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+	<!-- Custom styles for our template -->
+	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen" >
+	<link rel="stylesheet" href="assets/css/main.css">
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="assets/js/html5shiv.js"></script>
+	<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body class="home">
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
+		<div class="container">
+			<div class="navbar-header">
+				<!-- Button for smallest screens -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+				<a class="navbar-brand" href="index.html"><img src="assets/images/logoPdb.png" alt="Progressus HTML5 template"></a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav pull-right">
+					<li class="active"><a href="index.html">Inicio</a></li>
+					<li><a href="about.html">Sobre Mi</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Proyecto <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="objetivo.html">Objetivo</a></li>
+							<li class="active"><a href="desarrollo.html">Desarrollo</a></li>
+							<li class="active"><a href="graficos.html">Graficos</a></li>
+							<li class="active"><a href="video.html">Video</a></li>
+							<li class="active"><a href="preguntas.html">Preguntas Frecuentes</a></li>
+						</ul>
+					</li>
+					
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</div> 
+	<!-- /.navbar -->
+
+	<header id="head" class="secondary"></header>
+
+	<!-- container -->
+	<div class="container">
+
+		<ol class="breadcrumb">
+			<li><a href="index.html">Inicio</a></li>
+			<li class="active">Desarrollo</li>
+		</ol>
+
+		<div class="row">
+			
+			<!-- Article main content -->
+			
+				<header class="page-header">
+					<h1 class="page-title">Desarrollo del Proyecto</h1>
+				</header>
+				<p>En este proyecto, crearemos un Telegram Bot que enviará mensajes a nuestra cuenta de Telegram cada</p>
+				<p>vez que una puerta cambie de estado. Para detectar el cambio, usaremos un interruptor de contacto magnético.</p>
+				<p>Un interruptor de contacto magnético es básicamente un interruptor de lengüeta encerrado en una</p>
+				<p>carcasa de plástico para que pueda aplicarlo fácilmente a una puerta, una ventana o un cajón para</p>
+				<p>si está abierto o cerrado.</p>
+				<img src="assets/images/sensor.png">
+				<p>El circuito eléctrico se cierra cuando un imán está cerca del interruptor: puerta cerrada. Cuando el</p>
+				<p>imán está lejos del interruptor (puerta abierta), el circuito está abierto. Vea la figura a continuación.</p>
+				<img src="assets/images/circuito.png">
+
+				<strong><h2>Presentamos Telegram</h2></strong>
+				<p>Telegram Messenger es un servicio de mensajería instantánea y voz sobre IP basado en la nube.</p>
+				<p>Se puede instalar fácilmente en nuestro teléfono inteligente (Android y iPhone) o computadora (PC, Mac y</p>
+				<p>Linux). Es gratis y sin anuncios. Telegram te permite crear bots con los que puedes interactuar.</p>
+
+				<blockquote>Los bots son aplicaciones de terceros que se ejecutan dentro de Telegram. Los usuarios pueden interactuar con los bots enviándoles mensajes, comandos y solicitudes en línea. Usted controla sus bots mediante solicitudes HTTPS a Telegram Bot API “.</blockquote>
+				<p>El ESP32 interactuará con el bot de Telegram para enviar mensajes a su cuenta de Telegram. Cada vez que la puerta</p>
+				<p>de estado,recibiremos una notificación en nuestro dispositivo (si hay acceso a internet). </p>
+
+				<strong><h3>Creando un BOT de Telegram</h3></strong>
+				<p>Ir a Google Play o App Store, descargar e instalar Telegram.</p>
+				<img src="assets/images/telegram1.png">
+				<p>Abrir Telegram y seguir los siguientes pasos para crear un Bot de Telegram. Primero, buscar " botfather " </p>
+				<p>y hacer clic en BotFather como se muestra a continuación. O abrir este enlace t.me/botfather en su teléfono inteligente.</p>
+				<img src="assets/images/telegram2.png">
+				<p>Debería abrirse la siguiente ventana y se pedirá hacer clic en el botón de inicio.</p>
+				<img src="assets/images/telegram3.png">
+				<p>Escribe /newbot y seguir las instrucciones para crear tu bot. Dale un nombre y un nombre de</p>
+				<p>usuario.El mio se llama Sensor De puerta, y el nombre de usuario esESPDoorSensorBot</p>
+				<img src="assets/images/telegram4.png">
+				<p>Si el bot se crea correctamente, recibiremos un mensaje con un enlace para acceder al bot y al token</p>
+				<p>de bot . Guardar el token del bot porque lo necesitaremos para que el ESP32 pueda interactuar con el bot.</p>
+				<img src="assets/images/telegram5.png">
+				<h3>Envío de un mensaje al Bot</h3>
+				<p>Debemos enviar un mensaje al Telegram Bot desde nuestra cuenta de Telegram antes de que pueda enviarle mensajes.</p>
+				<p><strong>1)</strong> Vuelva a la pestaña de chats y, en el campo de búsqueda, escriba el nombre de usuario de su bot.</p>
+				<img src="assets/images/telegram6.png">
+				<p><strong>2)</strong> su bot para iniciar una conversación.</p>
+				<p><strong>3)</strong>Haga clic en el enlace Inicio.</p>
+				<img src="assets/images/telegram7.png">
+				<p>¡Y eso es! Podemps pasar a la siguiente sección.</p>
+				<h3>Obtenemos ID de usuario de Telegram</h3>
+				<p>Para enviar un mensaje a nuestra cuenta de Telegram, el bot necesita saber nuestro ID de usuario.</p>
+				<p>En nuestra cuenta de Telegram, busque " myidbot " o abra este enlace t.me/myidbot en su teléfono inteligente.</p>
+				<img src="assets/images/telegram8.png">
+				<p>Iniciamos una conversación con ese bot y escribir /getid . Recibiremos una respuesta con nuestro ID de usuario.</p>
+				<p>Guarde ese ID de usuario , porque lo necesitaremos más adelante en este tutorial.</p>
+				<img src="assets/images/telegram9.png">
+				<h3>Preparando el IDE Arduino</h3>
+				<p>Programaremos la  placa ESP32 utilizando el IDE de Arduino, así tenemos que asegurarnos de tenerlo instalado en su IDE de Arduino.</p>
+				<h3>Biblioteca universal de bots de Telegram</h3>
+				<p>Para interactuar con el bot de Telegram, usaremos la biblioteca universal de bots de Telegram creada por Brian Lough que proporciona una interfaz sencilla para la API de bots de Telegram</p>
+				<p>Seguir los siguientes pasos para instalar la última versión de la biblioteca.</p>
+				<p>1.Haga clic aquí para descargar la biblioteca Universal Arduino Telegram Bot.</p>
+				<p>2.Vaya a Boceto > Incluir biblioteca > Agregar biblioteca ZIP.. .</p>
+				<p>3.Agregue la biblioteca que acaba de descargar.</p>
+				<p><strong>Importante:</strong> no instalar la biblioteca a través de Arduino Library Manager porque se  podría instalar una versión obsoleta.</p>
+				<h3>Biblioteca ArduinoJson</h3>
+				<p>También debemos instalar la biblioteca ArduinoJson . Seguir los siguientes pasos para instalar la biblioteca.</p>
+				<p>1.Ir a Skech > Incluir biblioteca > Administrar bibliotecas.</p>
+				<p>2.Buscar "ArduinoJson".</p>
+				<p>3.Instalar la biblioteca.</p>
+				<p>Estamos usando la biblioteca ArduinoJson versión 6.15.2</p>
+				<img src="assets/images/arduino1.png">
+				<strong><h3>Piezas Necesarias</h3></strong>
+				<p>Aquí está el hardware que se necesita para completar este proyecto:</p>
+				<p>Placa ESP32</p>
+				<p>1 × interruptor de lengüeta magnética </p>
+				<p>1 × resistencia de 10 kΩ</p>
+				<p>1 × tablero</p>
+				<p>Cables puente</p>
+				<h3>Esquema: ESP32 con interruptor de láminas</h3>
+				<p>Conectamos el interruptor de lengüeta a GPIO 4, pero se puede conectarlo a cualquier GPIO adecuado.</p>
+				<img src="assets/images/gpio1.png">
+				<strong><h3>Código</h3></strong>
+				<p>Copiar el boceto a continuación en su IDE de Arduino. Reemplazar el SSID, la contraseña, el token BOT y la ID de usuario con las credenciales.</p>
+                <blockquote>
+					<span>#</span><span>include</span><span>&lt;WiFi.h&gt;</span><br>
+				    <span>#</span><span>include</span><span>&lt;WiFiClientSecure.h&gt;</span><br>
+					<span>#</span><span>include</span><span>&lt;UniversalTelegramBot.h&gt;</span><br>
+					<span>#</span><span>include</span><span>&lt;ArduinoJson.h&gt;</span><br>
+					<p>//Establece GPIO para red y interruptor de laminas</p>
+					<p>const int reedSwitch = 4;</p>  
+					<p>const int led = 2; //opcional</p>   
+					<p>// Detecta cada vez que la puerta cambia de estado</p>
+					<p>bool changeState = false;</p>
+					<p>// Mantiene el estado de interruptor de laminas</p>
+					<p>bool state;</p>
+					<p>String doorState;</p>
+					<p>//Variables auxiliares (solo detectara cambios separados por 1500 milisegundos)</p>
+					<p>unsigned long previousMillis = 0;</p>
+					<p>const long interval = 1500;</p>
+					<p>const char* ssid = "REMPLAZAR_CON_TU_SSID_LOCAL";</p>
+					<p>const char* password = "REMPLAZAR_CON_TU_CONTRASEÑA";</p>
+					<p>//Inicializar Telegram BOT</p>
+					<p>#define BOTtoken "XXXXXXXXXX:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" //Su Bot Token (Obtener de Botfather)</p>
+					<p>//Usa @myidbot para averiguar el ID de chat de un individuo o un grupo</p>
+					<p>//También tenga en cuenta que debe hacer clic en "iniciar" en un bot</p>
+					<p>#define CHAT_ID "XXXXXXXXXX"</p>
+					<p>WiFiClientSecure client;</p>
+					<p>UniversalTelegramBot bot(BOTtoken, client);</p>
+					<p>// Se ejecuta cada vez que el interruptor de láminas cambia de estado</p>
+					<p>ICACHE_RAM_ATTR void changeDoorStatus() {</p>
+						<p>Serial.println("State changed");</p>
+						<p>changeState = true;</p>
+					<p>}</p>
+					<p>void setup() {</p>	
+						<p>// Puerto serie para propósitos de depuración</p>
+						<p> Serial.begin(9600); //Dependiendo puede ir 9600 o 115200</p>
+						<p>// Lee el estado actual de la puerta</p>
+						<p>pinMode(reedSwitch, INPUT_PULLUP);</p>
+						<p>state = digitalRead(reedSwitch);</p>
+						<p>// Establecer el estado del LED para que coincida con el estado de la puerta</p>
+						<p>pinMode(led, OUTPUT);</p>
+						<p>digitalWrite(led, !state);</p>
+						<p>// Configure el pin del interruptor de láminas como interrupción, asigne la función de interrupción y configure el modo CAMBIAR</p>
+						<p>attachInterrupt(digitalPinToInterrupt(reedSwitch), changeDoorStatus, CHANGE);</p>
+						<p>// Conéctate a wifi</p>
+						<p>WiFi.mode(WIFI_STA);</p>
+						<p> WiFi.begin(ssid, password);</p>
+						<p>client.setCACert(TELEGRAM_CERTIFICATE_ROOT); // Agregar certificado raíz para api.telegram.org</p>
+						<p> while (WiFi.status() != WL_CONNECTED) {</p>
+							<p>delay(500);</p>
+						<p>}</p>
+						<p>Serial.println("");</p>	
+						<p>Serial.println("WiFi conectado");</p>
+						<p>bot.sendMessage(CHAT_ID, "Iniciando Bot", "");</p>
+					<p>}</p>
+					<p>void loop() {</p>
+						<p>if (changeState){</p>
+							<p>unsigned long currentMillis = millis();</p>
+							<p> if(currentMillis - previousMillis >= interval) {</p>
+								<p>previousMillis = currentMillis;</p>
+								<p>// Si ha ocurrido un estado, invertir el estado actual de la puerta</p>
+								<p>state = !state;</p>
+								<p>if(state) {</p>	
+									<p>doorState = "cerrada";</p>
+									<p>}</p>
+									<p>else{</p>
+										<p>doorState = "abierta";</p>
+									<p>}</p>
+									<p>digitalWrite(led, !state);</p>
+									<p>changeState = false;</p>
+									<p>Serial.println(state);</p>
+									<p>Serial.println(doorState);</p>
+									<p>//Enviar notificación</p>
+									<p>bot.sendMessage(CHAT_ID, "La puerta esta " + doorState, "");</p>
+							<p> }</p>		
+						<p>}</p>
+					<p>}</p>		
+				</blockquote>
+				<strong><h3>Cómo funciona el código</h3></strong>
+				<p>En primer lugar, incluya las bibliotecas necesarias.</p>
+				<span>#</span><span>include</span><span>&lt;WiFi.h&gt;</span><br>
+				<span>#</span><span>include</span><span>&lt;WiFiClientSecure.h&gt;</span><br>
+				<span>#</span><span>include</span><span>&lt;UniversalTelegramBot.h&gt;</span><br>
+				<span>#</span><span>include</span><span>&lt;ArduinoJson.h&gt;</span><br>
+				<p>Configure los GPIO para el interruptor de lengüeta y el LED (el LED incorporado es GPIO 2).</p>
+				<p>Encenderemos el LED integrado cuando la puerta esté abierta.</p>
+				<p>const int reedSwitch = 4;</p>  
+				<p>const int led = 2; //opcional</p>
+				<p>La variable booleana changeState indica si la puerta ha cambiado de estado.</p>
+				<p>bool changeState = false;</p>
+				<p>La variable state mantendrá el estado del interruptor de lengüeta y doorState</p>
+				<p>bool state;</p>
+				<p>String doorState;</p>
+				<p>Las siguientes variables de temporizador nos permiten eliminar el rebote del interruptor. Solo se considerarán los cambios que se hayan producido con al menos 1500 milisegundos entre ellos.</p>
+				<p>unsigned long previousMillis = 0;</p>
+				<p>const long interval = 1500;</p>
+				<p>Introducir tu SSID y contraseña local en las siguientes variables para que el ESP32 pueda conectarse a internet.</p>
+				<p>const char* ssid = "REMPLAZAR_CON_TU_SSID_LOCAL";</p>
+				<p>const char* password = "REMPLAZAR_CON_TU_CONTRASEÑA";</p>
+				<p>Inserta tu token de bot de Telegram</p>
+				<p>#define BOTtoken "XXXXXXXXXX:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"</p>
+				<p>Inserta tu ID de chat</p>
+				<p>#define CHAT_ID "XXXXXXXXXX"</p>
+				<p>Cree un nuevo cliente Wi-Fi con Wi-FiClientSecure</p>
+				<p>WiFiClientSecure client;</p>
+				<p>Cree un bot con el token y el cliente definidos anteriormente.</p>
+				<p>UniversalTelegramBot bot(BOTtoken, client);</p>
+				<p>La función changeDoorStatus se ejecutará cada vez que se detecte un cambio en el estado de la puerta. Esta función simplemente cambia el changeState de estado a la variable verdadero. Entonces, en el loop(),nos encargaremos de lo que sucede cuando cambia el estado (invertir el estado de la puerta anterior y enviar un mensaje a su cuenta de Telegram).</p>
+				<p>ICACHE_RAM_ATTR void changeDoorStatus() {</p>
+					<p>Serial.println("State changed");</p>
+					<p>changeState = true;</p>
+				<p>}</p>
+				<strong><h4>Setup()</h4></strong>
+				<p>En el setup(), inicialice el Serial Monitor para fines de depuración:</p>
+				<p>Serial.begin(9600);</p>
+				<p>Configure el interruptor de lengüeta como un INPUT. Y guarda el estado actual cuando el ESP32 se inicia por primera vez.</p>
+				<p>pinMode(reedSwitch, INPUT_PULLUP);</p>
+				<p>state = digitalRead(reedSwitch);</p>
+				<p>Configure el LED como un OUTPUT y configure su estado para que coincida con el estado del interruptor de láminas (circuito cerrado y LED apagado; circuito abierto y LED encendido).</p>
+				<p>pinMode(led, OUTPUT);</p>
+				<p>digitalWrite(led, !state);</p>
+				<h4>Establecer una interrupción</h4>
+				<p>Configure el interruptor de láminas como una interrupción.</p>
+				<p>attachInterrupt(digitalPinToInterrupt(reedSwitch), changeDoorStatus, CHANGE);</p>
+				<p>Para establecer una interrupción en el IDE de Arduino, utiliza la funcion attachInterrupt () que acepta como argumentos: el pin de interrupción GPIO, el nombre de la función a ejecutar y el modo.</p>
+				<p>El primer argumento es una interrupción GPIO. Deberías usar pin digitalPinToInterrupt (GPIO) para configurar el GPIO real como un pin de interrupción.</p>
+				<p>El segundo argumento de la funcion attachInterrupt  ()  es el nombre de la función que se llamará cada vez que se active la interrupción: la rutina de servicio de interrupción (ISR). En este caso, es la funcion es changeDoorStatus.</p>
+                <p>La función ISR debe ser lo más simple posible, para que el procesador vuelva rápidamente a la ejecución del programa principal.</p>
+				<p>El tercer argumento es la moda. Lo configuramos a CHANGE para activar la interrupción siempre que el pin cambie de valor, por ejemplo, de ALTO a BAJO y de BAJO a ALTO.</p>
+				<h4>Inicializar Wi-Fi</h4>
+				<p>Las siguientes líneas conectan el ESP32 a Wi-Fi y agregan un certificado raíz para api.telegram.org.</p>
+				<p>WiFi.mode(WIFI_STA);</p>
+				<p> WiFi.begin(ssid, password);</p>
+				<p>client.setCACert(TELEGRAM_CERTIFICATE_ROOT); // Agregar certificado raíz para api.telegram.org</p>
+			    <p> while (WiFi.status() != WL_CONNECTED) {</p>
+					    <p>delay(500);</p>
+					<p>}</p>
+					<p>Serial.println("");</p>	
+					<p>Serial.println("WiFi conectado");</p>
+				<p>Envía un mensaje a tu cuenta de Telegram informándote que se inició el bot.</p>
+				<p>bot.sendMessage(CHAT_ID, "Iniciando Bot", "");</p>
+				<strong><h3>Loop()</h3>	</strong>
+				<p>En el loop(), vamos a leer la variable changeState, y si se ha producido un cambio, le enviaremos un mensaje a su cuenta de Telegram.</p>
+				<p>Primero, verifique si ocurrió un cambio:</p>
+				<p>if (changeState){</p>
+				<p>Luego, verifique si han pasado al menos 1500 milisegundos desde el último cambio de estado.</p>
+				<p>if(currentMillis - previousMillis >= interval) {</p>	
+				<p>Si eso es cierto, reinicie el temporizador e invierta el estado actual del interruptor:</p>
+				<p>state = !state;</p>	
+				<p>Si el estado del interruptor de láminas es 1(verdadero), la puerta está cerrada. Entonces, cambiamos la variable doorState a cerrado.</p>
+                <p>if(state) {</p>	
+					<p>doorState = "cerrada";</p>
+				<p>}</p> 
+				<p>Si es 0(falso), la puerta se abre.</p>
+				<p>else{</p>
+					<p>doorState = "abierta";</p>
+				<p>}</p>
+				<p>Configure el estado del LED en consecuencia e imprima el estado de la puerta en el monitor serie.</p>
+				<p>digitalWrite(led, !state);</p>
+				<p>changeState = false;</p>
+				<p>Serial.println(state);</p>
+				<p>Serial.println(doorState);</p>
+				<p>Finalmente, la siguiente línea envía una notificación a su cuenta de Telegram con el estado actual de la puerta.</p>
+                <p>bot.sendMessage(CHAT_ID, "La puerta esta " + doorState, "");</p>
+
+
+
+
+			</article>
+			<!-- /Article -->
+			
+			
+
+		</div>
+	</div>	<!-- /container -->
+	
+
+	<footer id="footer" class="top-space">
+
+		<div class="footer1">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">Contacto</h3>
+						<div class="widget-body">
+								<a href="mailto:#">myoung@pioix.edu.ar</a><br>
+								<br>
+								Casa Salesiana Pio IX - Yapeyu 197, CABA
+							</p>	
+						</div>
+					</div>
+
+					
+
+
+				</div> <!-- /row of widgets -->
+			</div>
+		</div>
+
+		<div class="footer2">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-6 widget">
+						<div class="widget-body">
+							<p class="simplenav">
+								<a href="#">Inicio</a> | 
+								<a href="about.html">Sobre mi</a> |
+								<a href="sidebar-right.html">Proyecto</a> |
+							
+							</p>
+						</div>
+					</div>
+
+					<div class="col-md-6 widget">
+						<div class="widget-body">
+							<p class="text-right">
+								Copyright &copy; 2022, Maria Sol Young
+							</p>
+						</div>
+					</div>
+
+				</div> <!-- /row of widgets -->
+			</div>
+		</div>
+	</footer>	
+		
+
+
+
+
+	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="assets/js/headroom.min.js"></script>
+	<script src="assets/js/jQuery.headroom.min.js"></script>
+	<script src="assets/js/template.js"></script>
+</body>
+</html>
